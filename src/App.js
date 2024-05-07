@@ -63,7 +63,9 @@ function App() {
               </a>
               <img src={shareIcon} alt='Share' onClick={handleShare}/>
             </div>
-            <button onClick={downloadFiles}>download</button>
+            <div className="download-links">
+              <button onClick={downloadFiles}>Download All Files</button>
+            </div>
           </header>
         </div>
       </div>

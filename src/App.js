@@ -1,21 +1,10 @@
-import logo from './logo.svg';
+import React, { Fragment } from 'react';
 import './App.css';
-import instagramIcon from './Images/icons8-instagram-50.png';
-import product1Image from './Images/Dropment.png';
-import product2Image from './Images/Dropment.png';
 import dropment from './Images/drop2_logo.png';
+import instagramIcon from './Images/icons8-instagram-50.png';
 import shareIcon from './Images/shareIcon.png';
-import { Fragment } from 'react';
-
-const FreeFiles1 = [
-  'https://dropment.online/Free_Instagram_theme_page_bundle_no1.zip'
-];
-const FreeFiles2 = [
-  'https://dropment.online/Free_Instagram_theme_page_bundle_no2.zip',
-];
-const FreeFiles3 = [
-  'https://dropment.online/Free_Instagram_theme_page_bundle_no3.zip'
-];
+import product1Image from './Images/Black Pearl.png';
+import product2Image from './Images/Obsidian Oasis.png';
 
 function App() {
   const handleShare = async () => {
@@ -39,42 +28,6 @@ function App() {
     }
   };
 
-  const downloadFiles = () => {
-    FreeFiles1.forEach(url => {
-      const fileName = url.split('/').pop();
-      const aTag = document.createElement('a');
-      aTag.href = url;
-      aTag.setAttribute('download', fileName);
-      document.body.appendChild(aTag);
-      aTag.click();
-      aTag.remove();
-    });
-  };
-
-  const downloadFiles2 = () => {
-    FreeFiles2.forEach(url => {
-      const fileName = url.split('/').pop();
-      const aTag = document.createElement('a');
-      aTag.href = url;
-      aTag.setAttribute('download', fileName);
-      document.body.appendChild(aTag);
-      aTag.click();
-      aTag.remove();
-    });
-  };
-
-  const downloadFiles3 = () => {
-    FreeFiles3.forEach(url => {
-      const fileName = url.split('/').pop();
-      const aTag = document.createElement('a');
-      aTag.href = url;
-      aTag.setAttribute('download', fileName);
-      document.body.appendChild(aTag);
-      aTag.click();
-      aTag.remove();
-    });
-  };
-
   const handleWhatsAppChat = () => {
     window.location.href = 'https://api.whatsapp.com/send?phone=7760372901';
   };
@@ -92,6 +45,25 @@ function App() {
               <img src={shareIcon} alt='Share' onClick={handleShare}/>
             </div>
           </header>
+        </div>
+        <div className="products">
+          <div className="product">
+            <img src={product1Image} alt="Black Pearl"/>
+            <h3>Black Pearl</h3>
+            <p>Free!</p> {/* Replace XX.XX with actual price */}
+            <button>View</button>
+          </div>
+          <div className="product">
+            <img src={product2Image} alt="Obsidian Oasis"/>
+            <h3>Obsidian Oasis</h3>
+            <p>$25</p> {/* Replace XX.XX with actual price */}
+            <button>View</button>
+          </div>
+        </div>
+        <div className="footer">
+          <footer>
+            <p>&copy; 2024 Dropment. All rights reserved.</p>
+          </footer>
         </div>
       </div>
     </Fragment>

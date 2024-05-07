@@ -1,0 +1,1 @@
+<button onClick={() => downloadFile(FreeFile)} className="download-btn">Download</button>

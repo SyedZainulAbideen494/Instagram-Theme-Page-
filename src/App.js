@@ -7,8 +7,11 @@ import dropment from './Images/drop2_logo.png'
 import shareIcon from './Images/shareIcon.png'
 import { Fragment } from 'react';
 
-const FreeFile = 'http://localhost:3000/Free_Instagram_theme_page_bundle.zip'
-
+const FreeFiles = [
+  'http://localhost:3000/Free_Instagram_theme_page_bundle_no1.zip',
+  'http://localhost:3000/Free_Instagram_theme_page_bundle_no2.zip',
+  'http://localhost:3000/Free_Instagram_theme_page_bundle_no3.zip'
+];
 function App() {
   const handleShare = async () => {
     const siteURL = 'https://dropment.online'; // URL of dropment.online

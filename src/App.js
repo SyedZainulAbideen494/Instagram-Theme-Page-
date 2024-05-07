@@ -7,9 +7,13 @@ import dropment from './Images/drop2_logo.png';
 import shareIcon from './Images/shareIcon.png';
 import { Fragment } from 'react';
 
-const FreeFiles = [
-  'https://dropment.online/Free_Instagram_theme_page_bundle_no1.zip',
+const FreeFiles1 = [
+  'https://dropment.online/Free_Instagram_theme_page_bundle_no1.zip'
+];
+const FreeFiles2 = [
   'https://dropment.online/Free_Instagram_theme_page_bundle_no2.zip',
+];
+const FreeFiles3 = [
   'https://dropment.online/Free_Instagram_theme_page_bundle_no3.zip'
 ];
 
@@ -36,7 +40,31 @@ function App() {
   };
 
   const downloadFiles = () => {
-    FreeFiles.forEach(url => {
+    FreeFiles1.forEach(url => {
+      const fileName = url.split('/').pop();
+      const aTag = document.createElement('a');
+      aTag.href = url;
+      aTag.setAttribute('download', fileName);
+      document.body.appendChild(aTag);
+      aTag.click();
+      aTag.remove();
+    });
+  };
+
+  const downloadFiles2 = () => {
+    FreeFiles2.forEach(url => {
+      const fileName = url.split('/').pop();
+      const aTag = document.createElement('a');
+      aTag.href = url;
+      aTag.setAttribute('download', fileName);
+      document.body.appendChild(aTag);
+      aTag.click();
+      aTag.remove();
+    });
+  };
+
+  const downloadFiles3 = () => {
+    FreeFiles3.forEach(url => {
       const fileName = url.split('/').pop();
       const aTag = document.createElement('a');
       aTag.href = url;
@@ -65,6 +93,8 @@ function App() {
             </div>
             <div className="download-links">
               <button onClick={downloadFiles}>Download All Files</button>
+              <button onClick={downloadFiles2}>Download All Files2</button>
+              <button onClick={downloadFiles3}>Download All Files3</button>
             </div>
           </header>
         </div>

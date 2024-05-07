@@ -3,15 +3,16 @@ import './App.css';
 import instagramIcon from './Images/icons8-instagram-50.png';
 import product1Image from './Images/Dropment.png';
 import product2Image from './Images/Dropment.png';
-import dropment from './Images/drop2_logo.png'
-import shareIcon from './Images/shareIcon.png'
+import dropment from './Images/drop2_logo.png';
+import shareIcon from './Images/shareIcon.png';
 import { Fragment } from 'react';
 
 const FreeFiles = [
-  'https://dropment.online/Free_Instagram_theme_page_bundle_no1.zip',
-  'https://dropment.online/Free_Instagram_theme_page_bundle_no2.zip',
-  'https://dropment.online/Free_Instagram_theme_page_bundle_no3.zip'
+  'http://localhost:3000/Free_Instagram_theme_page_bundle_no1.zip',
+  'http://localhost:3000/Free_Instagram_theme_page_bundle_no2.zip',
+  'http://localhost:3000/Free_Instagram_theme_page_bundle_no3.zip'
 ];
+
 function App() {
   const handleShare = async () => {
     const siteURL = 'https://dropment.online'; // URL of dropment.online
@@ -34,17 +35,17 @@ function App() {
     }
   };
 
-  
-
-  const downloadFile = (url) => {
-    const fileName = url.split('/').pop()
-    const aTag = document.createElement('a')
-    aTag.href = url
-    aTag.setAttribute('download', fileName)
-    document.body.appendChild(aTag)
-    aTag.click()
-    aTag.remove()
-  }
+  const downloadFiles = () => {
+    FreeFiles.forEach(url => {
+      const fileName = url.split('/').pop();
+      const aTag = document.createElement('a');
+      aTag.href = url;
+      aTag.setAttribute('download', fileName);
+      document.body.appendChild(aTag);
+      aTag.click();
+      aTag.remove();
+    });
+  };
 
   const handleWhatsAppChat = () => {
     window.location.href = 'https://api.whatsapp.com/send?phone=7760372901';
@@ -60,10 +61,9 @@ function App() {
               <a href='https://www.instagram.com/dropment.online'>
                 <img src={instagramIcon} alt='Instagram'/>
               </a>
-                <img src={shareIcon} alt='Share' onClick={handleShare}/>
+              <img src={shareIcon} alt='Share' onClick={handleShare}/>
             </div>
           </header>
-          <button onClick={() => downloadFile(FreeFiles)} className="download-btn">Download</button>
         </div>
       </div>
     </Fragment>

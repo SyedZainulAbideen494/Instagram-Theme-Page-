@@ -8,9 +8,9 @@ import shareIcon from './Images/shareIcon.png';
 import { Fragment } from 'react';
 
 const FreeFiles = [
-  'http://localhost:3000/Free_Instagram_theme_page_bundle_no1.zip',
-  'http://localhost:3000/Free_Instagram_theme_page_bundle_no2.zip',
-  'http://localhost:3000/Free_Instagram_theme_page_bundle_no3.zip'
+  'https://dropment.online/Free_Instagram_theme_page_bundle_no1.zip',
+  'https://dropment.online/Free_Instagram_theme_page_bundle_no2.zip',
+  'https://dropment.online/Free_Instagram_theme_page_bundle_no3.zip'
 ];
 
 function App() {

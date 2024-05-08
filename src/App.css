@@ -192,6 +192,63 @@ body {
   }
 }
 
+.feedbackSection {
+  color: #fff; /* Text color */
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.feedbackSection section {
+  margin: 0 auto; /* Center align form */
+}
+
+.feedbackSection {
+  color: #fff; /* Text color */
+  padding: 20px;
+}
+
+.feedbackSection section {
+  max-width: 600px; /* Limit form width */
+  margin: 0 auto; /* Center align form */
+  text-align: center; /* Center align heading */
+}
+
+.heading_feedbackSection h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  align-items: center; /* Center align input and button */
+}
+
+input[name="message"] {
+  padding: 16px;
+  margin-bottom: 10px;
+  border: 1px solid #777;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  background-color: #444444;
+  color: #fff;
+  width: 100%; /* Take up full width */
+}
+
+input[type="submit"] {
+  background-color: #ffffff; /* Green */
+  border: 1px solid #ffffff;
+  color: black;
+  padding: 16px 20px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100px; /* Adjust button width */
+  align-self: flex-start; /* Align button to the start of the container */
+  margin-left: auto; /* Move button to the right */
+}
+
+
 /*Mobile css*/
 @media (min-width: 312px) and (max-width: 600px) {
   .hero_section h2 {

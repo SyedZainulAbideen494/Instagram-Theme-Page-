@@ -6,6 +6,8 @@ import shareIcon from './Images/shareIcon.png';
 import product1Image from './Images/Black Pearl.png';
 import product2Image from './Images/Obsidian Oasis.png';
 import heroImage from './Images/banner1.png'
+import emailjs from '@emailjs/browser';
+
 
 const AnimatedSection = ({ children }) => {
   const sectionRef = useRef();
@@ -37,30 +39,26 @@ const AnimatedSection = ({ children }) => {
 
 
 function App() {
-  const contactusRef = useRef(null);
-  const [q1, setq1] = useState(false)
-  const [q2, setq2] = useState(false)
-  const [q3, setq3] = useState(false)
-  const [q4, setq4] = useState(false)
-  const [q5, setq5] = useState(false)
+  const form = useRef();
 
-  const toggleQ5 = () => {
-    setq5(!q5); // Toggles the state of q1
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_pek4tcv', 'template_bfaicga', form.current, {
+        publicKey: 'oiGY-u7t8BC8uN_Zf',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
   };
 
-  const toggleQ4 = () => {
-    setq4(!q4); // Toggles the state of q1
-  };
 
-  const toggleQ1 = () => {
-    setq1(!q1); // Toggles the state of q1
-  };
-  const toggleQ2 = () => {
-    setq2(!q2); // Toggles the state of q1
-  };
-  const toggleQ3 = () => {
-    setq3(!q3); // Toggles the state of q1
-  };
   const handleShare = async () => {
     const siteURL = 'https://dropment.online'; // URL of dropment.online
   
@@ -128,6 +126,17 @@ function App() {
     <button>Buy Now</button>
   </div>
 </div>
+<div className='feedbackSection'>
+        <section>
+          <div className='heading_feedbackSection'>
+            <h2>Feedback</h2>
+          </div>
+          <form ref={form} onSubmit={sendEmail}>
+      <input name="message" placeholder='Send Feedback' />
+      <input type="submit" value="Send" />
+    </form>
+        </section>
+      </div>
   </div>
   );
 }

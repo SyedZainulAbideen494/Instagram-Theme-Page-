@@ -1,107 +1,203 @@
 /* Global styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #000000; /* Dark background color */
-  color: #fff; /* White text color */
-}
-.header {
-  background-color: #181818; /* darker header background color */
-  padding: 20px;
+  background-color: #000000;
+  color: #fff;
+  margin: 0;
 }
 
-.header header {
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 5px; /* Width of the scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #333333; /* Color of the track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #666666; /* Color of the scrollbar handle */
+  border-radius: 5px; /* Roundness of the scrollbar handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #888888; /* Color of the scrollbar handle on hover */
+}
+
+.section-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.section-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.header {
+  background-color: #131313;
   display: flex;
   align-items: center;
+  padding: 10px 20px;
 }
 
 .header img {
-  height: 40px; /* Adjust the height as needed */
+  height: 50px;
   margin-right: 10px;
 }
 
-.header .social-links {
+.social-links {
   margin-left: auto;
 }
 
-.header .social-links a {
-  margin-left: 10px; /* Adjust the spacing between icons */
+.social-links a {
+  margin-left: 10px;
 }
 
-.header .social-links img {
-  height: 30px; /* Adjust the height of the share icon */
+.social-links img {
+  height: 30px;
   cursor: pointer;
-}
-
-/* Styles for product grid */
-.products {
-  display: flex;
-  flex-wrap: wrap; 
-  background-color: #181818;
-  padding: 20px;
-  margin-top: 20px;
-}
-
-/* Styles for individual product */
-.product {
-  background-color: #333333; 
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  margin-left: 30px;
-  text-align: center;
   transition: transform 0.3s ease;
 }
 
-.product:hover {
-  transform: translateY(-5px);
+.social-links img:hover {
+  transform: scale(1.1);
 }
 
-.product img {
-  max-width: 100%;
-  max-height: 200px; 
-  border-radius: 12px;
-  margin-bottom: 10px;
+.hero_section {
+  background-size: cover;
+  background-position: center;
+  height: 87vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.product h3 {
-  margin: 0;
+.hero_content {
+  text-align: center;
+}
+
+.hero_section h2 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  padding: 15px 25px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid #ffffff;
+  cursor: pointer;
+  border-radius: 9px;
+  font-size: 18px;
+}
+
+.cta-button:hover {
+  background-color: #ffffff;
+  transition: 0.3s;
+  color: black;
+}
+
+.dark-section_products {
+  background-color: #131313; /* Dark background color */
+  color: #fff; /* Text color */
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap */
+  justify-content: center; /* Center align items */
+  margin-top: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 25px;
+}
+
+.bundles-heading {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px; /* Add space between heading and bundles */
   font-size: 20px;
 }
 
-.product p {
+.bundle {
+  background-color: #1f1f1f; /* Bundle background color */
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #333333;
+  text-align: center;
+  width: calc(240px - 20px); /* Adjust width to fit two bundles with margin */
+  margin: 10px; /* Add margin around each bundle */
+}
+
+.bundle img {
+  width: 100%;
+  max-height: 180px; /* Limit image height */
+  border-radius: 10px;
+  object-fit: cover; /* Maintain aspect ratio */
+}
+
+.bundle h2 {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.bundle p {
+  font-size: 1.2em;
   margin: 5px 0;
 }
 
-.product button {
-  background: linear-gradient(to right, #9F9BEA 0%, #72C3EE 100%);
-  color: #ffffff; 
-  border: none;
+.discounted_price {
+  color: #777; /* Adjusted color for discounted price */
+  text-decoration: line-through; /* Strike-through the price */
+  margin-left: 5px; /* Add spacing between price and discount message */
+}
+
+.price {
+  color: #777; /* Set price color to white */
+}
+
+.bundle p {
+  font-size: 1.2em;
+  margin: 5px 0;
+  text-align: center; /* Center align the price and discount message */
+}
+
+.bundle button {
+  background-color: transparent; /* Green */
+  border: 1px solid #fff;
+  color: white;
   padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.product button:hover {
-  background-color: #1565C0; 
-}
-
-/* Footer styles */
-.footer {
   text-align: center;
-  margin-top: 20px;
-}
-
-.footer button {
-  background-color: #388E3C; 
-  color: #ffffff; 
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+  text-decoration: none;
+  display: block; /* Full width button */
+  width: 100%; /* Full width button */
+  font-size: 16px;
+  border-radius: 25px;
+  margin-top: 30px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.footer button:hover {
-  background-color: #2E7D32; 
+.bundle button:hover {
+  background-color: #ffffff; /* Darker green on hover */
+  border: 1px solid #fff;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .bundle {
+    width: calc(90% - 20px); /* Adjust width to fit one bundle with margin */
+  }
+}
+
+/*Mobile css*/
+@media (min-width: 312px) and (max-width: 600px) {
+  .hero_section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 }

@@ -90,7 +90,6 @@ Experience the pinnacle of Instagram excellence with the "Obsidian Oasis" bundle
           <li>Watch Clips</li>
           <li>Money Clips</li>
           <li>Houses/Building Clips</li>
-          <li>E-Book Guide</li>
         </ul>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import '../App.css'
 import { Link } from "react-router-dom";
 import shareIcon from '../Images/shareIcon.png'
@@ -18,8 +18,36 @@ const FreeFiles3 = [
   'https://dropment.online/Free_Instagram_theme_page_bundle_no3.zip'
 ];
 
-const Product1 = () => {
+const downloadFile = (url) => {
+  const fileName = url.split('/').pop();
+  const aTag = document.createElement('a');
+  aTag.href = url;
+  aTag.setAttribute('download', fileName);
+  document.body.appendChild(aTag);
+  aTag.click();
+  aTag.remove();
+}
+const BuyModal = ({ onClose }) => (
+  
+  <div className="modal-overlay">
+    <div className="modal">
+      <button className="close-btn" onClick={onClose}>Close</button>
+      <h3>Choose Payment Method</h3>
+      <div className="btn-container">
+        <button className="download-btn" onClick={() => downloadFile(FreeFiles1[0])} >Dowload Bundle No 1</button>
+        <button className="download-btn" onClick={() => downloadFile(FreeFiles2[0])} >Dowload Bundle No 2</button>
+        <button className="download-btn" onClick={() => downloadFile(FreeFiles3[0])} >Dowload Bundle No 3</button>
+      </div>
+    </div>
+  </div>
+);
 
+const Product1 = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleBuyClick = () => {
+    setShowModal(true);
+  };
   const handleShare = async () => {
     const siteURL = 'https://dropment.online/Black-Pearl'; // URL of dropment.online
   
@@ -41,15 +69,7 @@ const Product1 = () => {
     }
   };
 
-  const downloadFile = (url) => {
-    const fileName = url.split('/').pop();
-    const aTag = document.createElement('a');
-    aTag.href = url;
-    aTag.setAttribute('download', fileName);
-    document.body.appendChild(aTag);
-    aTag.click();
-    aTag.remove();
-  }
+
 
   return (
     <div className="main-div-products-page">
@@ -60,7 +80,7 @@ const Product1 = () => {
         <h2>Black Pearl</h2>
         <div className="icons">
           <img src={shareIcon} alt="Share icon" onClick={handleShare} />
-          <img src={insta} alt="Instagram icon" onClick={() => downloadFile(FreeFiles1[0])} />
+          <img src={insta} alt="Instagram icon"/>
         </div>
       </div>
       <div className="product-section">
@@ -71,9 +91,10 @@ const Product1 = () => {
         <h2>Black Pearl</h2>
         <p className="price">$12</p>
         <p className="discounted-price">$0.00</p>
-        <button className="buy-btn">Buy Now</button>
+        <button className="buy-btn" onClick={handleBuyClick}>Buy Now</button>
       </div>
     </div>
+    {showModal && <BuyModal onClose={() => setShowModal(false)} />}
     <div className="description-section">
         <h3>Product Description</h3>
         <p>

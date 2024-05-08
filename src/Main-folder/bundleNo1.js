@@ -1,17 +1,19 @@
-import React, { useCallback } from "react";
+import React from "react";
 import '../App.css'
-import product1Image from '../Images/Black Pearl.png';
 import { Link } from "react-router-dom";
 import shareIcon from '../Images/shareIcon.png'
 import insta from '../Images/icons8-instagram-50.png'
 import JSZip from 'jszip';
+import ProductImg from '../Images/Black Pearl.png'
 
 const FreeFiles1 = [
   'https://dropment.online/Free_Instagram_theme_page_bundle_no1.zip'
 ];
+
 const FreeFiles2 = [
-  'https://dropment.online/Free_Instagram_theme_page_bundle_no2.zip',
+  'https://dropment.online/Free_Instagram_theme_page_bundle_no2.zip'
 ];
+
 const FreeFiles3 = [
   'https://dropment.online/Free_Instagram_theme_page_bundle_no3.zip'
 ];
@@ -39,98 +41,64 @@ const Product1 = () => {
     }
   };
 
-  const downloadAllFiles1 = async () => {
-    const zip = new JSZip();
-    const promises = [];
-
-    // Fetch each file and add it to the zip
-    FreeFiles1.forEach((url, index) => {
-      const fileName = `file_${index + 1}.zip`; // You can customize the file names here
-      const promise = fetch(url)
-        .then(response => response.blob())
-        .then(blob => zip.file(fileName, blob));
-      promises.push(promise);
-    });
-
-    // Wait for all fetch promises to resolve
-    await Promise.all(promises);
-
-    // Generate the zip file and provide a download link
-    zip.generateAsync({ type: 'blob' }).then(blob => {
-      const downloadLink = document.createElement('a');
-      downloadLink.href = URL.createObjectURL(blob);
-      downloadLink.download = 'Black Pearl Bundle Pack 1'; // Name of the zip file
-      document.body.appendChild(downloadLink);
-      downloadLink.click();
-      document.body.removeChild(downloadLink);
-    });
-  };
-
-  const downloadAllFiles2 = async () => {
-    const zip = new JSZip();
-    const promises = [];
-
-    // Fetch each file and add it to the zip
-    FreeFiles2.forEach((url, index) => {
-      const fileName = `file_${index + 1}.zip`; // You can customize the file names here
-      const promise = fetch(url)
-        .then(response => response.blob())
-        .then(blob => zip.file(fileName, blob));
-      promises.push(promise);
-    });
-
-    // Wait for all fetch promises to resolve
-    await Promise.all(promises);
-
-    // Generate the zip file and provide a download link
-    zip.generateAsync({ type: 'blob' }).then(blob => {
-      const downloadLink = document.createElement('a');
-      downloadLink.href = URL.createObjectURL(blob);
-      downloadLink.download = 'Black Pearl Bundle Pack 2'; // Name of the zip file
-      document.body.appendChild(downloadLink);
-      downloadLink.click();
-      document.body.removeChild(downloadLink);
-    });
-  };
-
-  const downloadAllFiles3 = async () => {
-    const zip = new JSZip();
-    const promises = [];
-
-    // Fetch each file and add it to the zip
-    FreeFiles3.forEach((url, index) => {
-      const fileName = `file_${index + 1}.zip`; // You can customize the file names here
-      const promise = fetch(url)
-        .then(response => response.blob())
-        .then(blob => zip.file(fileName, blob));
-      promises.push(promise);
-    });
-
-    // Wait for all fetch promises to resolve
-    await Promise.all(promises);
-
-    // Generate the zip file and provide a download link
-    zip.generateAsync({ type: 'blob' }).then(blob => {
-      const downloadLink = document.createElement('a');
-      downloadLink.href = URL.createObjectURL(blob);
-      downloadLink.download = 'Black Pearl Bundle Pack 3'; // Name of the zip file
-      document.body.appendChild(downloadLink);
-      downloadLink.click();
-      document.body.removeChild(downloadLink);
-    });
-  };
+  const downloadFile = (url) => {
+    const fileName = url.split('/').pop();
+    const aTag = document.createElement('a');
+    aTag.href = url;
+    aTag.setAttribute('download', fileName);
+    document.body.appendChild(aTag);
+    aTag.click();
+    aTag.remove();
+  }
 
   return (
-    <div className="main_div_products_page">
-      <div class="header_products_page">
+    <div className="main-div-products-page">
+      <div className="header_products_page">
         <Link to='/'>
           <button>&#9664;</button>
         </Link>
         <h2>Black Pearl</h2>
-        <div class="icons">
-          <i class="fa fa-share-alt"><img src={shareIcon} onClick={handleShare} alt="Share icon"/></i>
-          <i class="fa fa-instagram"><img src={insta} alt="Instagram icon" onClick={downloadAllFiles2}/></i>
+        <div className="icons">
+          <img src={shareIcon} alt="Share icon" onClick={handleShare} />
+          <img src={insta} alt="Instagram icon" onClick={() => downloadFile(FreeFiles1[0])} />
         </div>
+      </div>
+      <div className="product-section">
+      <div className="product-image">
+        <img src={ProductImg} alt="Product" />
+      </div>
+      <div className="product-details">
+        <h2>Black Pearl</h2>
+        <p className="price">$12</p>
+        <p className="discounted-price">$0.00</p>
+        <button className="buy-btn">Buy Now</button>
+      </div>
+    </div>
+    <div className="description-section">
+        <h3>Product Description</h3>
+        <p>
+Introducing the ultimate boost for your Instagram presence – the "Black Pearl" bundle! Elevate your social media game with a treasure trove of 50 premium clips designed to captivate and inspire your audience.
+
+Dive into a collection of diverse content ranging from exclusive "Old Money" clips exuding sophistication and elegance, to exhilarating "Car" and "Yacht" clips that redefine luxury living. Take flight with stunning "Airplane" footage or set the scene for unforgettable moments with vibrant "Party" clips. Keep track of time in style with sleek "Watch" clips, while "Money" clips symbolize success and abundance. Explore the architectural wonders of the world with captivating "Houses/Building" clips – each one a visual masterpiece.
+
+But that's not all! Accompanying this treasure trove of visual delights is an enriching e-book filled with tips, tricks, and strategies to optimize your Instagram growth. Learn how to curate a motivational page that resonates with your audience, leveraging the power of these clips to fuel engagement and cultivate a thriving community.
+
+Unlock the potential of your Instagram page with the "Black Pearl" bundle – your passport to inspiration, sophistication, and unparalleled growth.
+        </p>
+
+        <h4>What's Included:</h4>
+        <ul>
+          <li>50+ clips</li>
+          <li>Old money Clips</li>
+          <li>Car Clips</li>
+          <li>Yatch Clips</li>
+          <li>Airplane Clips</li>
+          <li>Party Clips</li>
+          <li>Watch Clips</li>
+          <li>Money Clips</li>
+          <li>Houses/Building Clips</li>
+          <li>E-Book Guide</li>
+        </ul>
       </div>
     </div>
   );

@@ -337,3 +337,155 @@ input[type="submit"] {
 .header_products_page h2 {
   margin: 0; /* Remove default margin for the heading */
 }
+
+.product-section {
+  color: #fff;
+  padding: 20px;
+  text-align: center; /* Center align the content */
+}
+
+.product-details h2 {
+  font-size: 40px;
+}
+
+.product-image img {
+  width: 50%; /* Make the image fill the container */
+  height:auto;
+  display: block; /* Ensure image is centered */
+  margin: 0 auto 20px; /* Center the image and add margin at the bottom */
+}
+
+.product-details {
+  padding-left: 20px;
+}
+
+.price, .discounted-price {
+  margin: 5px 0;
+}
+
+.price {
+  font-size: 12px;
+  text-decoration: line-through;
+}
+
+.discounted-price {
+  font-size: 20px;
+  color: #aaa; /* Adjust color for discounted price */
+}
+
+.buy-btn {
+  background-color: white;
+  color: black;
+  border: 1px solid white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+  padding: 12px 300px; /* Wider button padding */
+}
+
+.buy-btn:hover {
+  background-color: transparent;
+  color: white;
+  border: 1px solid #fff;
+}
+
+/* Media query for mobile devices */
+@media screen and (max-width: 768px) {
+  .product-section {
+    padding: 20px; /* Reduce padding for better mobile layout */
+  }
+  
+  .product-details {
+    padding-left: 0;
+  }
+  
+  .buy-btn {
+    padding: 12px 100px; /* Adjusted padding for mobile */
+  }
+  .product-image img {
+    width: 80%; /* Make the image fill the container */
+    height:auto;
+    display: block; /* Ensure image is centered */
+    margin: 0 auto 20px; /* Center the image and add margin at the bottom */
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .description-section {
+    background: linear-gradient(to bottom, #131313, #131313);
+    color: #ddd;
+    padding: 40px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .description-section {
+    background: linear-gradient(to bottom, #131313, #131313);
+    color: #ddd;
+    padding: 40px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+.description-section h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #fff; /* White color for headings */
+}
+
+.description-section h4 {
+  font-size: 24px;
+  margin-top: 30px;
+  color: #fff; /* White color for headings */
+}
+
+.description-section p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  max-width: 600px; /* Adjust max-width as needed */
+  margin-left: auto; /* Center align paragraphs */
+  margin-right: auto; /* Center align paragraphs */
+}
+
+.description-section ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.description-section li {
+  margin-bottom: 10px;
+}
+
+/* Custom Fonts */
+.description-section {
+  font-family: 'Arial', sans-serif;
+}
+
+/* Custom Button */
+.description-section button {
+  background-color: #ff4500;
+  color: #fff;
+  border: none;
+  padding: 15px 40px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+.description-section button:hover {
+  background-color: #e63900;
+}

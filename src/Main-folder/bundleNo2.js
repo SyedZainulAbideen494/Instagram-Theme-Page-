@@ -35,7 +35,8 @@ const Product2 = () => {
   };
 
   const handleWhatsAppChat = () => {
-    window.location.href = 'https://api.whatsapp.com/send?phone=7760372901';
+    const defaultMsg = encodeURIComponent("Buy Obsidian Oasis Bundle (Don't edit this message, You will recive a response within 15mins)");
+    window.location.href = `https://api.whatsapp.com/send?phone=7760372901&text=${defaultMsg}`;
   };
 
   return (

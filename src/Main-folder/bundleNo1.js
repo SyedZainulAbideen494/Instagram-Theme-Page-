@@ -80,7 +80,9 @@ const Product1 = () => {
         <h2>Black Pearl</h2>
         <div className="icons">
           <img src={shareIcon} alt="Share icon" onClick={handleShare} />
+          <a href="https://www.instagram.com/dropment.online">
           <img src={insta} alt="Instagram icon"/>
+          </a>
         </div>
       </div>
       <div className="product-section">

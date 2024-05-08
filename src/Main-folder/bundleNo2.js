@@ -48,7 +48,9 @@ const Product2 = () => {
         <h2>Obsidian Oasis</h2>
         <div className="icons">
           <img src={shareIcon} alt="Share icon" onClick={handleShare} />
+          <a href="https://www.instagram.com/dropment.online">
           <img src={insta} alt="Instagram icon"/>
+          </a>
         </div>
       </div>
       <div className="product-section">

@@ -123,6 +123,7 @@ function Home() {
   <button>Buy Now</button>
 </div>
 </Link>
+<Link to='/Obsidian-Oasis' style={{textDecoration: 'none', color: 'white'}}>
   <div className="bundle">
     <img src={product2Image} alt="Bundle 2" />
     <h2>Obsidian Oasis Bundle</h2>
@@ -133,6 +134,7 @@ function Home() {
     <p>$29.99</p>
     <button>Buy Now</button>
   </div>
+  </Link>
 </div>
 <div className='feedbackSection'>
         <section>

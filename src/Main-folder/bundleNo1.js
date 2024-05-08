@@ -98,11 +98,9 @@ const Product1 = () => {
     <div className="description-section">
         <h3>Product Description</h3>
         <p>
-Introducing the ultimate boost for your Instagram presence – the "Black Pearl" bundle! Elevate your social media game with a treasure trove of 50 premium clips designed to captivate and inspire your audience.
+        Introducing the ultimate boost for your Instagram presence – the "Black Pearl" bundle! Elevate your social media game with a treasure trove of 50 premium clips designed to captivate and inspire your audience.
 
 Dive into a collection of diverse content ranging from exclusive "Old Money" clips exuding sophistication and elegance, to exhilarating "Car" and "Yacht" clips that redefine luxury living. Take flight with stunning "Airplane" footage or set the scene for unforgettable moments with vibrant "Party" clips. Keep track of time in style with sleek "Watch" clips, while "Money" clips symbolize success and abundance. Explore the architectural wonders of the world with captivating "Houses/Building" clips – each one a visual masterpiece.
-
-But that's not all! Accompanying this treasure trove of visual delights is an enriching e-book filled with tips, tricks, and strategies to optimize your Instagram growth. Learn how to curate a motivational page that resonates with your audience, leveraging the power of these clips to fuel engagement and cultivate a thriving community.
 
 Unlock the potential of your Instagram page with the "Black Pearl" bundle – your passport to inspiration, sophistication, and unparalleled growth.
         </p>
@@ -118,7 +116,6 @@ Unlock the potential of your Instagram page with the "Black Pearl" bundle – yo
           <li>Watch Clips</li>
           <li>Money Clips</li>
           <li>Houses/Building Clips</li>
-          <li>E-Book Guide</li>
         </ul>
       </div>
     </div>

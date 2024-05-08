@@ -7,7 +7,7 @@ import insta from '../Images/icons8-instagram-50.png'
 import JSZip from 'jszip';
 
 const FreeFiles1 = [
-  'http://localhost:3000/Free_Instagram_theme_page_bundle_no1.zip'
+  'https://dropment.online/Free_Instagram_theme_page_bundle_no1.zip'
 ];
 const FreeFiles2 = [
   'https://dropment.online/Free_Instagram_theme_page_bundle_no2.zip',
@@ -129,7 +129,7 @@ const Product1 = () => {
         <h2>Black Pearl</h2>
         <div class="icons">
           <i class="fa fa-share-alt"><img src={shareIcon} onClick={handleShare} alt="Share icon"/></i>
-          <i class="fa fa-instagram"><img src={insta} alt="Instagram icon" onClick={downloadAllFiles3}/></i>
+          <i class="fa fa-instagram"><img src={insta} alt="Instagram icon" onClick={downloadAllFiles2}/></i>
         </div>
       </div>
     </div>

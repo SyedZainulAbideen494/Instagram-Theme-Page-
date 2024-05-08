@@ -53,6 +53,7 @@ function Home() {
       .then(
         () => {
           console.log('SUCCESS!');
+          alert('Thanks For the feedback')
         },
         (error) => {
           console.log('FAILED...', error.text);
@@ -128,10 +129,10 @@ function Home() {
     <img src={product2Image} alt="Bundle 2" />
     <h2>Obsidian Oasis Bundle</h2>
     <p>
-    <span className='discounted_price'>$50 </span>
-    <span className='price'>(40% off Limited time offer!)</span>
+    <span className='discounted_price'>$57 </span>
+    <span className='price'>(82.46% off Limited time offer!)</span>
   </p>
-    <p>$29.99</p>
+    <p>$10</p>
     <button>Buy Now</button>
   </div>
   </Link>

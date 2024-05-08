@@ -57,7 +57,10 @@ const Product2 = () => {
       </div>
       <div className="product-details">
         <h2>Obsidian Oasis</h2>
-        <p className="price">$57</p>
+        <p>
+    <span className='discounted_price'>$57 </span>
+    <span className='price'>(82.46% off Limited time offer!)</span>
+  </p>
         <p className="discounted-price">$10</p>
         <button className="buy-btn" onClick={handleWhatsAppChat}>Buy Now</button>
       </div>

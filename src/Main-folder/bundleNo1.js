@@ -89,7 +89,10 @@ const Product1 = () => {
       </div>
       <div className="product-details">
         <h2>Black Pearl</h2>
-        <p className="price">$12</p>
+        <p>
+    <span className='discounted_price'>$12 </span>
+    <span className='price'>(100% off Limited time offer!)</span>
+  </p>
         <p className="discounted-price">$0.00</p>
         <button className="buy-btn" onClick={handleBuyClick}>Buy Now</button>
       </div>

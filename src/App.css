@@ -365,7 +365,6 @@ input[type="submit"] {
 
 .price {
   font-size: 12px;
-  text-decoration: line-through;
 }
 
 .discounted-price {

@@ -31,8 +31,8 @@ const BuyModal = ({ onClose }) => (
   
   <div className="modal-overlay">
     <div className="modal">
-      <button className="close-btn" onClick={onClose}>Close</button>
-      <h3>Choose Payment Method</h3>
+      <button className="close-btn" onClick={onClose}>x</button>
+      <h3>Download all the bundles</h3>
       <div className="btn-container">
         <button className="download-btn" onClick={() => downloadFile(FreeFiles1[0])} >Dowload Bundle No 1</button>
         <button className="download-btn" onClick={() => downloadFile(FreeFiles2[0])} >Dowload Bundle No 2</button>

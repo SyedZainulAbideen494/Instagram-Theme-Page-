@@ -40,6 +40,7 @@ const AnimatedSection = ({ children }) => {
 
 function App() {
   const form = useRef();
+  const bundlesRef = useRef(null);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -58,6 +59,10 @@ function App() {
       );
   };
 
+
+  const handleScrollToBundles = () => {
+    bundlesRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
 
   const handleShare = async () => {
     const siteURL = 'https://dropment.online'; // URL of dropment.online
@@ -98,11 +103,11 @@ function App() {
     <section className='hero_section' style={{ backgroundImage: `url(${heroImage})` }}>
       <div className="hero_content">
         <h2>Level Up Your Insta-Game</h2>
-        <button className="cta-button">Get Started!</button>
+        <button className="cta-button" onClick={handleScrollToBundles}>Get Started!</button>
       </div>
     </section>
     <div className="dark-section_products">
-  <div className="bundles-heading">
+  <div className="bundles-heading" ref={bundlesRef}>
     <h2>Our Bundles</h2>
   </div>
   <div className="bundle">
@@ -137,6 +142,33 @@ function App() {
     </form>
         </section>
       </div>
+      <div className='footer'>
+  <footer>
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h3>Social Media</h3>
+        <ul>
+        <a href='https://www.instagram.com/dropment.online' style={{textDecoration: 'none', color: 'white'}}>
+          <li>Instagram</li>
+          </a>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Constact Us</h3>
+        <ul>
+          <li>dropment.saz@gmail.com</li>
+          <li>+91 7760372901</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Links</h3>
+        <ul>
+          <li onClick={handleScrollToBundles}>Our bundles</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</div>
   </div>
   );
 }

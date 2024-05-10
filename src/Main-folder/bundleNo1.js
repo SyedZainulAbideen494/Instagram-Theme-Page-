@@ -96,7 +96,7 @@ const Product1 = () => {
     <span className='price'>(100% off Limited time offer!)</span>
   </p>
         <p className="discounted-price">$0.00</p>
-        <button className="buy-btn" onClick={handleBuyClick}>Buy Now</button>
+        <button className="buy-btn" onClick={handleBuyClick}>Download</button>
       </div>
     </div>
     {showModal && <BuyModal onClose={() => setShowModal(false)} />}

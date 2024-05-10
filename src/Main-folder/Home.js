@@ -104,7 +104,7 @@ function Home() {
     </header>
     <section className='hero_section' style={{ backgroundImage: `url(${heroImage})` }}>
       <div className="hero_content">
-        <h2>Level Up Your Insta-Game</h2>
+        <h2>Level Up Your<br/> Insta-Game</h2>
         <button className="cta-button" onClick={handleScrollToBundles}>Get Started!</button>
       </div>
     </section>
